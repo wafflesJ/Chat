@@ -50,7 +50,10 @@ function addMessage(content, isSelf = false, isImage = false) {
 }
 
 // WebSocket event handlers
+
 function setupWebSocket() {
+    if (socket) return; // Avoid creating multiple WebSocket connections
+
     socket = new WebSocket("ws://localhost:8080"); // Replace with your server URL
 
     socket.onopen = () => {
@@ -66,8 +69,6 @@ function setupWebSocket() {
                 } else if (data.type === "image") {
                     addMessage(data.content, false, true);
                 }
-                // Save the message to Firebase
-                //saveMessageToFirebase(data);
             }
         } catch (err) {
             console.error("Error parsing message:", err);
@@ -82,6 +83,7 @@ function setupWebSocket() {
         console.log('WebSocket connection closed.');
     };
 }
+
 
 // Handle login
 // Your existing code...
