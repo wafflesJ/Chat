@@ -55,7 +55,7 @@ function addMessage(content, isSelf = false, isImage = false) {
 function setupWebSocket() {
     if (socket) return; // If socket already exists, don't create a new one
 
-    socket = new WebSocket("ws://localhost:8080"); // Replace with your server URL
+    socket = new WebSocket("https://proxy-server-gray-psi.vercel.app:8080"); // Replace with your server URL
 
     socket.onopen = () => {
         console.log('WebSocket connection established.');
