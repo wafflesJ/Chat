@@ -55,7 +55,7 @@ function addMessage(content, isSelf = false, isImage = false) {
 function setupWebSocket() {
     if (socket) return; // If socket already exists, don't create a new one
 
-    socket = new WebSocket("https://websockets-3ihk.onrender.com:8080"); // Replace with your server URL
+    socket = new WebSocket("wss://websockets-3ihk.onrender.com"); // Replace with your server URL
 
     socket.onopen = () => {
         console.log('WebSocket connection established.');
