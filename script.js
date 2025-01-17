@@ -51,8 +51,9 @@ function addMessage(content, isSelf = false, isImage = false) {
 
 // WebSocket event handlers
 
+
 function setupWebSocket() {
-    if (socket) return; // Avoid creating multiple WebSocket connections
+    if (socket) return; // If socket already exists, don't create a new one
 
     socket = new WebSocket("ws://localhost:8080"); // Replace with your server URL
 
