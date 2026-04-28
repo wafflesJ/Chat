@@ -55,7 +55,7 @@ function addMessage(content, isSelf = false, isImage = false) {
 function setupWebSocket() {
     if (socket) return; // If socket already exists, don't create a new one
 
-    socket = new WebSocket("wss://chat-937x.onrender.com"); // Replace with your server URL
+    socket = new WebSocket("wss://chat-ts1m.onrender.com"); // Replace with your server URL
 
     socket.onopen = () => {
         console.log('WebSocket connection established.');
